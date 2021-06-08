@@ -11,9 +11,9 @@ cryptomatte_utilities.setup_cryptomatte_ui()
 
 #-----Define nuke directory
 
-Win_Dir = 'C:\Users\stephanie\.nuke'
+Win_Dir = 'C:\Users\sgadsden\.nuke'
 Mac_Dir = ''
-Linux_Dir = '/home/benm/.nuke'
+Linux_Dir = '/home/sgadsden/.nuke'
 
 # Automatically set global directory
 if platform.system() == "Windows":
