@@ -1,6 +1,4 @@
-
-#
-#
+# 2021
 #
 #
 import nuke
@@ -36,6 +34,7 @@ nuke.knobDefault('MotionBlur2D.shutteroffset', "centered")
 nuke.knobDefault('MotionBlur3D.shutteroffset', "centered")
 nuke.knobDefault('ScanlineRender.shutteroffset', "centered")
 nuke.knobDefault('Card3D.shutteroffset', "centered")
+nuke.knobDefault('Merge2.bbox',"B")
 
 
 
@@ -53,9 +52,14 @@ myGizmosMenu.addCommand('bm_OpticalGlow', 'nuke.createNode("bm_OpticalGlow")')
 
 
 
-
+#Merge menu
 mergeMenu = nuke.menu('Nodes').findItem("Merge/Merges")
 mergeMenu.addCommand('Stencil', 'nuke.createNode("Merge2", "operation stencil bbox B")', "alt+o", icon="Out.png", shortcutContext=2)
 mergeMenu.addCommand('Mask', 'nuke.createNode("Merge2", "operation mask bbox A")', "alt+i", icon="In.png", shortcutContext=2)
 mergeMenu.addCommand('Plus', 'nuke.createNode("Merge2", "operation plus")', "alt+]", icon="Add.png", shortcutContext=2)
 mergeMenu.addCommand('From', 'nuke.createNode("Merge2", "operation from")', "alt+[", icon="From.png", shortcutContext=2)
+
+
+#Bring back some legacy nodes
+nuke.menu('Nodes').addCommand('Shuffle','nuke.createNode("Shuffle")',"h")
+
